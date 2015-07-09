@@ -18,6 +18,11 @@ namespace Grades
             grades.Add(grade);
         }
 
+        public GradeStatistics ComputeStatistics()
+        {
+            return new GradeStatistics();
+        }
+
         List<float> grades;
     }
 }

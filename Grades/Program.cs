@@ -14,8 +14,7 @@ namespace Grades
             book.AddGrade(91f);
             book.AddGrade(89.5f);
 
-            GradeBook book2 = book;
-            book2.AddGrade(75);
+            GradeStatistics stats = book.ComputeStatistics();
         }
     }
 }
