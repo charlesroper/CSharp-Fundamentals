@@ -21,6 +21,13 @@ namespace Grades
 
         static void Main(string[] args)
         {
+            string name1 = "Charlie";
+            string name2 = "charlie";
+
+            // F12 on StringComparison to get the metadata view of the enum
+            bool areEqual = name1.Equals(name2, StringComparison.CurrentCultureIgnoreCase);
+            Console.WriteLine("name1 and name2 are equal? {0}", areEqual);
+
             GradeBook g1 = new GradeBook();
             GradeBook g2 = g1;
 
