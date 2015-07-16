@@ -8,10 +8,18 @@ namespace Grades
 {
     class Program
     {
+        static void GiveBookAName(GradeBook book)
+        {
+            book.Name = "The Gradebook";
+        }
+
         static void Main(string[] args)
         {
             GradeBook g1 = new GradeBook();
             GradeBook g2 = g1;
+
+            GiveBookAName(g1);
+            Console.WriteLine(g2.Name);
 
             //g1 = new GradeBook();
             g1.Name = "Scott's Book";
