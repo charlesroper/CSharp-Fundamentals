@@ -14,7 +14,7 @@ namespace Grades
             book.Name = "The New Gradebook";
         }
 
-        static void IncrementNumber(ref int number)
+        static void IncrementNumber(out int number)
         {
             number = 42;
         }
@@ -31,8 +31,8 @@ namespace Grades
             g1.Name = "Scott's Book";
             Console.WriteLine(g2.Name);
 
-            int x1 = 4;
-            IncrementNumber(ref x1);
+            int x1;
+            IncrementNumber(out x1);
             Console.WriteLine(x1);
 
             //GradeBook book = new GradeBook();
