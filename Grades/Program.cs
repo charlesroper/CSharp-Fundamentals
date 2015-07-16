@@ -21,13 +21,35 @@ namespace Grades
 
         static void Main(string[] args)
         {
-            string name1 = "Charlie";
-            string name2 = "charlie";
+            Immutable();
 
-            // F12 on StringComparison to get the metadata view of the enum
-            bool areEqual = name1.Equals(name2, StringComparison.CurrentCultureIgnoreCase);
-            Console.WriteLine("name1 and name2 are equal? {0}", areEqual);
+            //PassByValueAndRef();
 
+            //GradeBook book = new GradeBook();
+            //book.AddGrade(91f);
+            //book.AddGrade(89.5f);
+
+            //GradeStatistics stats = book.ComputeStatistics();
+            //Console.WriteLine("Average grade: {0}", stats.AverageGrade);
+            //Console.WriteLine("Highest grade: {0}", stats.HighestGrade);
+            //Console.WriteLine("Lowest grade: {0}", stats.LowestGrade);
+
+        }
+
+        private static void Immutable()
+        {
+            string name = " Charles ";
+            name = name.Trim();
+
+            DateTime date = new DateTime(2015, 07, 16);
+            date = date.AddHours(25);
+
+            Console.WriteLine(name);
+            Console.WriteLine(date);
+        }
+
+        private static void PassByValueAndRef()
+        {
             GradeBook g1 = new GradeBook();
             GradeBook g2 = g1;
 
@@ -41,16 +63,6 @@ namespace Grades
             int x1;
             IncrementNumber(out x1);
             Console.WriteLine(x1);
-
-            //GradeBook book = new GradeBook();
-            //book.AddGrade(91f);
-            //book.AddGrade(89.5f);
-
-            //GradeStatistics stats = book.ComputeStatistics();
-            //Console.WriteLine("Average grade: {0}", stats.AverageGrade);
-            //Console.WriteLine("Highest grade: {0}", stats.HighestGrade);
-            //Console.WriteLine("Lowest grade: {0}", stats.LowestGrade);
-
         }
     }
 }
