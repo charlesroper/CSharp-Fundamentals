@@ -16,7 +16,12 @@ namespace Grades
             //g1 = new GradeBook();
             g1.Name = "Scott's Book";
             Console.WriteLine(g2.Name);
-     
+
+            int x1 = 4;
+            int x2 = x1;
+
+            x1 = 100;
+            Console.WriteLine(x2);
 
             //GradeBook book = new GradeBook();
             //book.AddGrade(91f);
