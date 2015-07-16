@@ -8,14 +8,15 @@ namespace Grades
 {
     class Program
     {
-        static void GiveBookAName(GradeBook book)
+        static void GiveBookAName(ref GradeBook book)
         {
-            book.Name = "The Gradebook";
+            book = new GradeBook();
+            book.Name = "The New Gradebook";
         }
 
-        static void IncrementNumber(int number)
+        static void IncrementNumber(ref int number)
         {
-            number += 1;
+            number = 42;
         }
 
         static void Main(string[] args)
@@ -23,7 +24,7 @@ namespace Grades
             GradeBook g1 = new GradeBook();
             GradeBook g2 = g1;
 
-            GiveBookAName(g1);
+            GiveBookAName(ref g2);
             Console.WriteLine(g2.Name);
 
             //g1 = new GradeBook();
@@ -31,7 +32,7 @@ namespace Grades
             Console.WriteLine(g2.Name);
 
             int x1 = 4;
-            IncrementNumber(x1);
+            IncrementNumber(ref x1);
             Console.WriteLine(x1);
 
             //GradeBook book = new GradeBook();
