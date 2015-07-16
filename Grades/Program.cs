@@ -13,6 +13,11 @@ namespace Grades
             book.Name = "The Gradebook";
         }
 
+        static void IncrementNumber(int number)
+        {
+            number += 1;
+        }
+
         static void Main(string[] args)
         {
             GradeBook g1 = new GradeBook();
@@ -26,10 +31,8 @@ namespace Grades
             Console.WriteLine(g2.Name);
 
             int x1 = 4;
-            int x2 = x1;
-
-            x1 = 100;
-            Console.WriteLine(x2);
+            IncrementNumber(x1);
+            Console.WriteLine(x1);
 
             //GradeBook book = new GradeBook();
             //book.AddGrade(91f);
