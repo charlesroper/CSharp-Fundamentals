@@ -42,8 +42,7 @@ namespace Grades
 
         private static void Arrays()
         {
-            float[] grades;
-            grades = new float[4];
+            var grades = new float[4];
 
             AddGrades(grades);
 
