@@ -26,17 +26,17 @@ namespace Grades
 
             Arrays();
 
-            //Immutable();
-            //PassByValueAndRef();
+            Immutable();
+            PassByValueAndRef();
 
-            //GradeBook book = new GradeBook();
-            //book.AddGrade(91f);
-            //book.AddGrade(89.5f);
+            GradeBook book = new GradeBook();
+            book.AddGrade(91f);
+            book.AddGrade(89.5f);
 
-            //GradeStatistics stats = book.ComputeStatistics();
-            //Console.WriteLine("Average grade: {0}", stats.AverageGrade);
-            //Console.WriteLine("Highest grade: {0}", stats.HighestGrade);
-            //Console.WriteLine("Lowest grade: {0}", stats.LowestGrade);
+            GradeStatistics stats = book.ComputeStatistics();
+            Console.WriteLine("Average grade: {0}", stats.AverageGrade);
+            Console.WriteLine("Highest grade: {0}", stats.HighestGrade);
+            Console.WriteLine("Lowest grade: {0}", stats.LowestGrade);
 
         }
 
