@@ -31,7 +31,7 @@ namespace Grades.Tests
         }
 
         [TestMethod]
-        public void CalculatesAveragaGrade()
+        public void CalculatesAverageGrade()
         {
             Assert.AreEqual(100f, _stats.HighestGrade);
         }
