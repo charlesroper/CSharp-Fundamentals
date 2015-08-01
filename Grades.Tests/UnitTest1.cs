@@ -55,7 +55,7 @@ namespace Grades.Tests
             first.Append(" world");
             Assert.AreSame(first, second);
 
-            // The AreEqual method tests that the objects are the same.
+            // The AreSame assertion tests that the objects are the same.
             // We need to convert to a string representation to check
             // that the strings inside the objects are really the equal
             // See: http://stackoverflow.com/questions/11844803/implicit-vs-explicit-stringbuilder-tostring-cethod-call
