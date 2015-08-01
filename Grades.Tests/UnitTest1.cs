@@ -85,7 +85,7 @@ namespace Grades.Tests
             Assert.AreEqual(second, new IntHolder { i = 5 });
         }
 
-        public struct IntHolder
+        private struct IntHolder
         {
             public int i;
         }
