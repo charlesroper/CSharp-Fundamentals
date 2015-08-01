@@ -68,5 +68,26 @@ namespace Grades.Tests
             Assert.AreEqual(first.ToString(), "goodbye");
             Assert.AreEqual(second.ToString(), "hello world");
         }
+
+        [TestMethod]
+        public void TestValueTypes()
+        {
+            // We create a new IntHolder struct (a value type) and assign
+            // the integer value of 5. Then we create a second IntHolder
+            // and assign it with the value of first. This *copies*
+            // the value into second - it doesn't create a reference.
+            // Therefore, when we change first to 6, the second variable
+            // remains with the value of 5 we copied into it.
+            IntHolder first = new IntHolder();
+            first.i = 5;
+            IntHolder second = first;
+            first.i = 6;
+            Assert.AreEqual(second, new IntHolder { i = 5 });
+        }
+
+        public struct IntHolder
+        {
+            public int i;
+        }
     }
 }
