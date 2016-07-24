@@ -6,7 +6,7 @@ namespace Grades.Tests
     [TestClass]
     public class GradeBookTests
     {
-        private GradeStatistics _stats;
+        private readonly GradeStatistics _stats;
 
         public GradeBookTests()
         {
@@ -51,7 +51,7 @@ namespace Grades.Tests
 
             // Now we append another string onto "first"; because first 
             // and second refer to the same object, they both remain equal.
-            // In other words, the refer to the same object.
+            // In other words, they refer to the same object.
             first.Append(" world");
             Assert.AreSame(first, second);
 
@@ -88,6 +88,44 @@ namespace Grades.Tests
         private struct IntHolder
         {
             public int i;
+        }
+
+        [TestMethod]
+        public void PassByValue()
+        {
+            // We create a new Gradebook called book and set it to "not set". Then we call
+            // the SetName() method and pass it the * value * book Because book is a
+            // *reference * to an object, a copy of the reference gets passed in to the
+            // SetName() method.Thus, altering the object that is the subject of the
+            // reference, will change the object for all other variables that reference it.
+            GradeBook book = new GradeBook();
+            book.Name = "Not set";
+            SetName(book);
+
+            Assert.AreEqual("Name set", book.Name);
+        }
+
+        void SetName(GradeBook passedBookByValue)
+        {
+            // passedBookByValue is now a copy of the *reference* to the 
+            // instance of the GradeBook object called "book". Changing the 
+            // data using the passedBookByValue reference will also change
+            // the object for any other reference to that object; e.g., the book instance
+            passedBookByValue.Name = "Name set";
+        }
+
+        [TestMethod]
+        public void PassByReference()
+        {
+            GradeBook book = new GradeBook();
+            book.Name = "Not set";
+
+            Assert.AreEqual("Name set", book.Name);
+        }
+
+        void SetNameByRef(GradeBook passedBookByRef)
+        {
+            
         }
     }
 }
